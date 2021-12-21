@@ -1,4 +1,4 @@
-// v.2021.12.21a. With sound
+// v.2021.12.21b. With sound.
 "use strict";
 
 let canvas;
