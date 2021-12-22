@@ -1,12 +1,12 @@
-// v.2021.12.21b. With sound.
+// v.2021.12.22a. With sound.
 "use strict";
 
 let canvas;
 let canvasContext;
 let ballX = 50;
 let ballY = 50;
-let ballSpeedX = 10;
-let ballSpeedY = 4;
+let ballSpeedX = 12; //original value 10, made the ball faster
+let ballSpeedY = 5;  //original value 4, made the ball faster
 let player1Score = 0;
 let player2Score = 0;
 let gameBegin = true;
@@ -24,7 +24,7 @@ const PADDLE_HEIGHT = 100;
 const PADDLE_WIDTH = 10;
 const BALL_RADIUS = 10;
 const WINNING_SCORE = 10;
-const ANGULAR_COEFFIECIENT = 0.25; // original value 0.35
+const ANGULAR_COEFFIECIENT = 0.25; // original value 0.35, added more angle to the ball
 
 // 
 
@@ -64,7 +64,7 @@ function calculateMousePos(evt) {
   var mouseX = evt.clientX - rect.left - root.scrollLeft;
   var mouseY = evt.clientY - rect.top - root.scrollTop;
   return {
-    x:mouseX,
+    x: mouseX,
     y: mouseY
   };
 }
@@ -85,10 +85,10 @@ function handleMouseClick(evt) {
 function rightPaddelMovementsByComputer() {
   var paddle2YCenter = paddle2Y + (PADDLE_HEIGHT / 2);
   if (paddle2YCenter < ballY-35) {
-    paddle2Y +=  6;
+    paddle2Y += 8; // original value  6, increased right padel speed, player two speed
   }
-  else if (paddle2YCenter > ballY+35){ 
-    paddle2Y -= 6;
+  else if (paddle2YCenter > (ballY + 35)){ 
+    paddle2Y -= 8; // original value -6, increased right padel speed, player two speed
   }
 }
 //####################################################
